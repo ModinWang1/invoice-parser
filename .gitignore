@@ -1,0 +1,30 @@
+# Python-related
+__pycache__/
+
+.vscode/
+
+# Virtual environment
+venv/
+env/
+
+# Model files (if you have them locally)
+models/
+*.safetensors
+*.jpg
+*.png
+
+# Invoice image files
+invoices_as_images/
+
+# Output files
+*.csv
+output.csv
+
+# Streamlit temporary files
+.streamlit/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+DeepSeek-VL2/
