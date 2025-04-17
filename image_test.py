@@ -7,8 +7,11 @@ img = cv2.imread('invoices_as_images/654 Sign 20240683_page_1.jpg')
 # Convert to grayscale
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
+# Apply denoising
+denoised = cv2.fastNlMeansDenoising(gray, h=30)
+
 # Apply binary threshold (you can also try adaptive thresholding for messy scans)
-_, thresh = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY_INV)
+_, thresh = cv2.threshold(denoised, 150, 255, cv2.THRESH_BINARY_INV)
 
 # Find contours
 contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)

@@ -9,11 +9,14 @@ def preprocess_invoice_image(image_path: str, target_size=(1024, 1024)) -> Image
     # Convert to grayscale
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
+    # Denoise
+    denoised = cv2.fastNlMeansDenoising(gray, h=30)
+
     # Thresholding to detect text regions
     # Pixels lighter than 180 become 0 (black)
     # Pixels darker than 180 become 255 (white)
     # Then we invert it (THRESH_BINARY_INV) so that text (dark) becomes white, and background (light) becomes black.
-    _, thresh = cv2.threshold(gray, 180, 255, cv2.THRESH_BINARY_INV)
+    _, thresh = cv2.threshold(denoised, 180, 255, cv2.THRESH_BINARY_INV)
 
     # Find contours to crop to only the content
     contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
