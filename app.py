@@ -51,9 +51,8 @@ prompt = (
     "  'total': <float>\n"
     "}\n\n"
     "Keep in mind, if there is no quantity on an item it is assumed to be 1. "
-    "Also keep in mind that tax can also be known as GST or HST. "
-    "Also keep in mind that the 'total' is usually the largest amount and should at least be the same as the subtotal. "
-    "Also keep in mind 'invoice number' can also be known as 'invoice #' in the invoice or reciept"
+    "Note: 'invoice number' may be labeled as 'Invoice #', 'Ref No.', or 'Bill No.' 'Tax' may be labeled as GST/HST/VAT. 'Total' is usually the largest number and includes tax."
+    "Return only a valid JSON-formatted Python dictionary with these keys: [...]. Do not include explanations or extra text. All monetary values should be floats rounded to two decimal places. Item quantities must be integers. Dates must follow mm/dd/yyyy. If any value is missing, return a fallback ('N/A' or 0.0)."
 )
 
 if uploaded_files:

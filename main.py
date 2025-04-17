@@ -38,7 +38,7 @@ for filename in os.listdir(folder_path):
         print(f"Processing {filename}...")
         response = process_invoice(full_path, prompt)
         parsed = parse_output(response)
-        parsed['filename'] = filename  # optional for traceability
+        parsed['filename'] = filename  # optional but really useful for traceability
         all_data.append(parsed)
 
 # Adjust fieldnames based on your schema

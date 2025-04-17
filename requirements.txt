@@ -81,6 +81,7 @@ networkx @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_n
 notebook @ file:///home/conda/feedstock_root/build_artifacts/notebook_1741968175534/work
 notebook_shim @ file:///home/conda/feedstock_root/build_artifacts/notebook-shim_1733408315203/work
 numpy @ file:///D:/bld/numpy_1707225570061/work/dist/numpy-1.26.4-cp310-cp310-win_amd64.whl#sha256=6761da75b1528684e6bf4dabdbdded9d1eb4d0e9b299482c7ce152cfb3155106
+opencv-python==4.11.0.86
 overrides @ file:///home/conda/feedstock_root/build_artifacts/overrides_1734587627321/work
 packaging @ file:///home/conda/feedstock_root/build_artifacts/packaging_1733203243479/work
 pandas==2.2.3

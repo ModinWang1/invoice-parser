@@ -28,7 +28,6 @@ if not os.path.exists(MODEL_DIR):
     )
     print("✅ Model downloaded!")
 
-# specify the path to the model
 
 vl_chat_processor: DeepseekVLV2Processor = DeepseekVLV2Processor.from_pretrained(MODEL_DIR)
 tokenizer = vl_chat_processor.tokenizer
