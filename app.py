@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 from reader import process_invoice
+from image_processing import preprocess_invoice_image
 import os
 
 # Ensure that the 'temp' folder exists

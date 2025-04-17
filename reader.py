@@ -6,6 +6,7 @@ from deepseek_vl2.models import DeepseekVLV2Processor, DeepseekVLV2ForCausalLM
 import torch.cuda.amp as amp
 from deepseek_vl2.utils.io import load_pil_images
 from huggingface_hub import snapshot_download
+from image_processing import preprocess_invoice_image
 
 if torch.cuda.is_available():
     print("CUDA is available!")
@@ -72,7 +73,7 @@ prompt = (
 )
 def process_invoice(image_path: str, prompt: str) -> str:
 
-    image = Image.open(image_path).convert('RGB')
+    image = preprocess_invoice_image(image_path)
 
     conversation = [
         {
