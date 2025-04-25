@@ -12,7 +12,7 @@ st.title("🧾 Invoice Parser")
 
 # File uploader widget to upload multiple invoice images
 uploaded_files = st.file_uploader("Upload one or more invoice images", accept_multiple_files=True, type=["png", "jpg", "jpeg", "webp"])
-"""
+
 prompt = (
     "Extract the following info from the invoice or receipt:\n"
     "- 'invoice_number': string ('N/A' if missing)\n"
@@ -55,7 +55,7 @@ prompt = (
     "Note: 'invoice number' may be labeled as 'Invoice #', 'Ref No.', or 'Bill No.' 'Tax' may be labeled as GST/HST/VAT. 'Total' is usually the largest number and includes tax."
     "Return only a valid JSON-formatted Python dictionary with these keys: [...]. Do not include explanations or extra text. All monetary values should be floats rounded to two decimal places. Item quantities must be integers. Dates must follow mm/dd/yyyy. If any value is missing, return a fallback ('N/A' or 0.0)."
 )
-
+"""
 if uploaded_files:
     for uploaded_file in uploaded_files:
         # Display the uploaded image for preview
